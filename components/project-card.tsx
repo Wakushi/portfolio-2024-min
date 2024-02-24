@@ -16,10 +16,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   const { title, description, externalLink, repositories } = project
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 min-w-[185px]">
       {externalLink ? (
         <div className="flex items-center gap-1">
-          <a className="min-w-[170px]" href={externalLink} target="_blank">
+          <a href={externalLink} target="_blank">
             {title}
           </a>
           <GoArrowUpRight

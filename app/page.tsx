@@ -5,6 +5,8 @@ import { Project, ProjectType } from "@/types/project"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { MdAlternateEmail } from "react-icons/md"
 
+import penguin from "../assets/penguin.gif"
+
 export default function Home() {
   const animationDelayIncrement = 0.1
   let animationDelay = 0
@@ -16,7 +18,7 @@ export default function Home() {
   }
 
   return (
-    <main className="p-4 py-[8rem] lg:pt-[8rem] mx-auto max-w-[640px]">
+    <main className="p-4 lg:py-[8rem] mx-auto max-w-[640px]">
       <article className="flex flex-col gap-8 mb-4">
         <div
           style={generateDelayStyle()}
@@ -116,6 +118,9 @@ export default function Home() {
           </p>
         </div>
       </article>
+      {/* <div className="fixed bottom-0">
+        <img src={penguin.src} alt="A cute penguin" />
+      </div> */}
     </main>
   )
 }
