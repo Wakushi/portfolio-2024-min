@@ -1,10 +1,8 @@
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
+import ProjectCard from "@/components/project-card"
+import { projects } from "@/data/projects"
+import { Project, ProjectType } from "@/types/project"
+
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-import { GoArrowUpRight } from "react-icons/go"
 import { MdAlternateEmail } from "react-icons/md"
 
 export default function Home() {
@@ -16,8 +14,9 @@ export default function Home() {
     animationDelay += animationDelayIncrement
     return style
   }
+
   return (
-    <main className="p-4 pb-8 lg:pt-[8rem] mx-auto max-w-[640px]">
+    <main className="p-4 py-[8rem] lg:pt-[8rem] mx-auto max-w-[640px]">
       <article className="flex flex-col gap-8 mb-4">
         <div
           style={generateDelayStyle()}
@@ -59,135 +58,37 @@ export default function Home() {
             className="flex flex-col gap-6 flex-1 animated-block"
           >
             <h2 className="text-sm text-dark">Building</h2>
-            <div className="flex flex-col gap-2">
-              <HoverCard>
-                <HoverCardTrigger>
-                  <div className="flex items-center gap-1">
-                    <span>Portalsig</span>{" "}
-                    <GoArrowUpRight style={{ color: "#a0a0a0" }} />
-                  </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="flex flex-col gap-2">
-                  <h3 className="text-light text-sm">Repositories</h3>
-                  <div className="flex items-center gap-2 text-sm">
-                    <FaGithub />{" "}
-                    <a
-                      href="https://github.com/Wakushi/portalsig-front"
-                      target="_blank"
-                    >
-                      Frontend
-                    </a>
-                    <span>(Next.js)</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <FaGithub />{" "}
-                    <a
-                      href="https://github.com/Wakushi/portalsig-foundry"
-                      target="_blank"
-                    >
-                      Backend
-                    </a>
-                    <span>(Foundry)</span>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
-              <p className="text-dark text-md font-light">
-                Crosschain multisig wallet factory for EVM compatible
-                blockchains.
-              </p>
-            </div>
+            {projects
+              .filter(
+                (project: Project) => project.type === ProjectType.BUILDING
+              )
+              .map((project) => {
+                return <ProjectCard key={project.title} project={project} />
+              })}
           </div>
           <div
             style={generateDelayStyle()}
             className="flex flex-col gap-6 flex-1 animated-block"
           >
             <h2 className="text-sm text-dark">Projects</h2>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center">
-                <h3 className="text-light text-md max-w-[170px]">
-                  <a
-                    href="https://sequodia.com/plateforme-de-gestion-de-logements-de-fonction"
-                    target="_blank"
-                  >
-                    Service accomodation platform
-                  </a>
-                </h3>
-                <GoArrowUpRight style={{ color: "#a0a0a0" }} />
-              </div>
-              <p className="text-dark text-md font-light">
-                Client files matching with housing based on specific criteria,
-                and administrators with tools to manage file statuses.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center">
-                <h3 className="text-light text-md max-w-[170px]">
-                  <a
-                    href="https://sequodia.com/plateforme-medicale-de-teleconsultation-et-gestion-des-rendez-vous"
-                    target="_blank"
-                  >
-                    Medical platform
-                  </a>
-                </h3>
-                <GoArrowUpRight style={{ color: "#a0a0a0" }} />
-              </div>
-              <p className="text-dark text-md font-light">
-                Online booking and payment for both teleconsultations and
-                physical appointments with doctors
-              </p>
-            </div>
+            {projects
+              .filter(
+                (project: Project) => project.type === ProjectType.PROJECT
+              )
+              .map((project) => {
+                return <ProjectCard key={project.title} project={project} />
+              })}
           </div>
           <div
             style={generateDelayStyle()}
             className="flex flex-col gap-6 flex-1 animated-block"
           >
             <h2 className="text-sm text-dark">Hacks</h2>
-            <div className="flex flex-col gap-2">
-              <HoverCard>
-                <HoverCardTrigger>
-                  <div className="flex items-center gap-1">
-                    <span>DEVMentor</span>{" "}
-                    <GoArrowUpRight style={{ color: "#a0a0a0" }} />
-                  </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="flex flex-col gap-2">
-                  <h3 className="text-light text-sm">Repositories</h3>
-                  <div className="flex items-center gap-2 text-sm">
-                    <FaGithub />{" "}
-                    <a
-                      href="https://github.com/Wakushi/devmentor-front"
-                      target="_blank"
-                    >
-                      Frontend
-                    </a>
-                    <span>(Next.js)</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <FaGithub />{" "}
-                    <a
-                      href="https://github.com/Wakushi/devmentor"
-                      target="_blank"
-                    >
-                      Backend
-                    </a>
-                    <span>(Foundry)</span>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
-              <p className="text-dark text-md font-light">
-                <span>
-                  1<sup>st</sup>
-                </span>{" "}
-                place in SocialFi innovations at{" "}
-                <a
-                  href="https://devpost.com/software/devmentor"
-                  target="_blank"
-                >
-                  Chainlink Constellation Hackathon 2023
-                </a>{" "}
-                .
-              </p>
-            </div>
+            {projects
+              .filter((project: Project) => project.type === ProjectType.HACK)
+              .map((project) => {
+                return <ProjectCard key={project.title} project={project} />
+              })}
           </div>
         </div>
         <h2 style={generateDelayStyle()} className="animated-block">
