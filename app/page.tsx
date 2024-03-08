@@ -5,8 +5,6 @@ import { Project, ProjectType } from "@/types/project"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { MdAlternateEmail } from "react-icons/md"
 
-import penguin from "../assets/penguin.gif"
-
 export default function Home() {
   const animationDelayIncrement = 0.1
   let animationDelay = 0

@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/popover"
 import { Project } from "@/types/project"
 import { CiFolderOn } from "react-icons/ci"
-import { FaGithub } from "react-icons/fa"
+import { FaGithub, FaYoutube } from "react-icons/fa"
 import { GoArrowUpRight } from "react-icons/go"
 
 interface ProjectCardProps {
@@ -13,7 +13,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { title, description, externalLink, repositories } = project
+  const { title, description, externalLink, resources } = project
 
   return (
     <div className="flex flex-col gap-2 min-w-[185px]">
@@ -35,19 +35,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
           </PopoverTrigger>
           <PopoverContent className="flex flex-col gap-2 w-auto">
-            <h3 className="font-light text-sm">Repositories</h3>
+            <h3 className="font-light text-sm">resources</h3>
             <div className="flex flex-col gap-1">
-              {repositories?.map((repository) => {
+              {resources?.map((resource) => {
                 return (
                   <div
-                    key={repository.url}
+                    key={resource.url}
                     className="flex items-center gap-2 text-sm"
                   >
-                    <FaGithub />{" "}
-                    <a href={repository.url} target="_blank">
-                      {repository.type}
+                    {resource.icon === "github" ? <FaGithub /> : <FaYoutube />}{" "}
+                    <a href={resource.url} target="_blank">
+                      {resource.type}
                     </a>
-                    <span>{repository.description}</span>
+                    <span>{resource.description}</span>
                     <GoArrowUpRight style={{ color: "#a0a0a0" }} />
                   </div>
                 )

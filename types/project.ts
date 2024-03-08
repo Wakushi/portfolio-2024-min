@@ -1,7 +1,8 @@
-export interface Repository {
+export interface Resource {
   type: string
   url: string
   description: string
+  icon?: string
 }
 
 export enum ProjectType {
@@ -15,5 +16,5 @@ export interface Project {
   title: string
   description: string
   externalLink?: string
-  repositories?: Repository[]
+  resources?: Resource[]
 }

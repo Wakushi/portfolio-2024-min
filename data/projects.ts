@@ -5,17 +5,25 @@ const projects: Project[] = [
     type: ProjectType.BUILDING,
     title: "Portalsig",
     description:
-      "Crosschain multisig wallet factory for EVM compatible blockchains.",
-    repositories: [
+      "Crosschain multisig wallet factory for EVM compatible blockchains. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7170549028277964800/' target='_blank'> (Read more...) </a>",
+    resources: [
+      {
+        type: "Youtube",
+        url: "https://www.youtube.com/watch?v=muvzPS_4WdI",
+        description: "Demo",
+        icon: "youtube",
+      },
       {
         type: "Frontend",
         url: "https://github.com/Wakushi/portalsig-front",
         description: "(Next.js)",
+        icon: "github",
       },
       {
         type: "Backend",
         url: "https://github.com/Wakushi/portalsig-foundry",
         description: "(Foundry)",
+        icon: "github",
       },
     ],
   },
@@ -40,16 +48,24 @@ const projects: Project[] = [
     title: "DEVMentor",
     description:
       "<span>1<sup>st</sup></span> place in SocialFi innovations at <a href='https://devpost.com/software/devmentor' target='_blank'> Chainlink Constellation Hackathon 2023 </a>",
-    repositories: [
+    resources: [
+      {
+        type: "Youtube",
+        url: "https://www.youtube.com/watch?v=Z-BR3U3cnAI&t=140s",
+        description: "Demo",
+        icon: "youtube",
+      },
       {
         type: "Frontend",
         url: "https://github.com/Wakushi/devmentor-front",
         description: "(Next.js)",
+        icon: "github",
       },
       {
         type: "Backend",
         url: "https://github.com/Wakushi/devmentor",
         description: "(Foundry)",
+        icon: "github",
       },
     ],
   },
