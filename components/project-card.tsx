@@ -35,7 +35,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
           </PopoverTrigger>
           <PopoverContent className="flex flex-col gap-2 w-auto">
-            <h3 className="font-light text-sm">resources</h3>
+            <h3 className="font-light text-sm">Resources</h3>
             <div className="flex flex-col gap-1">
               {resources?.map((resource) => {
                 return (
