@@ -57,7 +57,12 @@ function Head({
       style={generateDelayStyle(animationOrder)}
       className="flex flex-col md:flex-row items-center justify-between animated-block"
     >
-      <h1 className="text-[3rem]">Maxime Eliazord</h1>
+      <div className="relative">
+        <h1 className="text-[3rem]">Maxime Eliazord</h1>
+        <span className="absolute top-[55px] font-light">
+          Typescript / Solidity builder
+        </span>
+      </div>
       <NavDock />
     </div>
   )
