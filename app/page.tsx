@@ -58,8 +58,8 @@ function Head({
       className="flex flex-col md:flex-row items-center justify-between animated-block"
     >
       <div className="relative">
-        <h1 className="text-[3rem]">Maxime Eliazord</h1>
-        <span className="absolute top-[55px] font-light">
+        <h1 className="text-[3rem] mb-2">Maxime Eliazord</h1>
+        <span className="absolute top-[55px] w-full text-center font-light left-1/2 transform -translate-x-1/2 md:text-start">
           Typescript / Solidity builder
         </span>
       </div>
