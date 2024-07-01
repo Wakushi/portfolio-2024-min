@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   return (
-    <main className="relative p-4 lg:py-[4rem] mx-auto max-w-[640px] flex flex-col gap-8 mb-4">
+    <main className="relative p-4 lg:py-[2rem] mx-auto max-w-[640px] flex flex-col gap-8 mb-4">
       <Head
         animationOrder={AnimationOrder.FIRST}
         generateDelayStyle={generateDelayStyle}
