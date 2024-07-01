@@ -7,8 +7,8 @@ export interface Resource {
 
 export enum ProjectType {
   BUILDING = "Building",
-  PROJECT = "Project",
-  HACK = "Hack",
+  PROJECTS = "Projects",
+  AWARDS = "Awards",
 }
 
 export interface Project {
@@ -17,4 +17,15 @@ export interface Project {
   description: string
   externalLink?: string
   resources?: Resource[]
+}
+
+export enum AnimationOrder {
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+  FOURTH = 4,
+  FIFTH = 5,
+  SIXTH = 6,
+  SEVENTH = 7,
+  EIGHTH = 8,
 }
