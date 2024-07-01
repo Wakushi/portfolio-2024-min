@@ -1,5 +1,7 @@
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern"
 import { NavDock } from "@/components/nav-dock"
 import ProjectList from "@/components/project-list"
+import { cn } from "@/lib/utils"
 import { AnimationOrder, ProjectType } from "@/types/project"
 
 export default function Home() {
@@ -15,7 +17,7 @@ export default function Home() {
   }
 
   return (
-    <main className="p-4 lg:py-[4rem] mx-auto max-w-[640px] flex flex-col gap-8 mb-4">
+    <main className="relative p-4 lg:py-[4rem] mx-auto max-w-[640px] flex flex-col gap-8 mb-4">
       <Head
         animationOrder={AnimationOrder.FIRST}
         generateDelayStyle={generateDelayStyle}
@@ -28,6 +30,16 @@ export default function Home() {
       <BottomContent
         animationOrder={AnimationOrder.SEVENTH}
         generateDelayStyle={generateDelayStyle}
+      />
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.08}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+          "h-full top-[-20%] skew-y-12 opacity-30"
+        )}
       />
     </main>
   )

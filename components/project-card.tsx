@@ -3,20 +3,22 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { Project } from "@/types/project"
+import { Project, ProjectType } from "@/types/project"
 import { CiFolderOn } from "react-icons/ci"
 import { FaGithub, FaYoutube } from "react-icons/fa"
 import { GoArrowUpRight } from "react-icons/go"
+import { BorderBeam } from "./magicui/border-beam"
 
 interface ProjectCardProps {
   project: Project
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { title, description, externalLink, resources } = project
+  const { title, description, externalLink, resources, type } = project
 
   return (
-    <div className="flex flex-col gap-2 min-w-[185px]">
+    <div className="relative flex flex-col gap-2 min-w-[185px] bg-white bg-opacity-[0.03] shadow-lg backdrop-blur-sm p-4 rounded">
+      {type === ProjectType.AWARDS && <BorderBeam />}
       {externalLink ? (
         <div className="flex items-center gap-1">
           <a href={externalLink} target="_blank">
@@ -58,7 +60,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       )}
 
       <p
-        className="text-dark text-sm	font-light"
+        className="text-sm font-light"
         dangerouslySetInnerHTML={{ __html: description }}
       ></p>
     </div>

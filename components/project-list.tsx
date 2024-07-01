@@ -16,7 +16,7 @@ export default function ProjectList({
       style={generateDelayStyle(animationOrder)}
       className="flex flex-col gap-6 flex-1 animated-block"
     >
-      <h2 className="text-sm text-dark">{projectType}</h2>
+      <h2 className="text-md text-dark">{projectType}</h2>
       {projects
         .filter((project: Project) => project.type === projectType)
         .map((project) => {

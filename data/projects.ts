@@ -55,9 +55,9 @@ const projects: Project[] = [
   },
   {
     type: ProjectType.PROJECTS,
-    title: "Service accomodation platform",
+    title: "HR Accomodation platform",
     description:
-      "Client files matching with housing based on specific criteria, and administrators with tools to manage file statuses.",
+      "Client files matching with housing based on specific criteria.",
     externalLink:
       "https://sequodia.com/plateforme-de-gestion-de-logements-de-fonction",
   },
