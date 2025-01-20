@@ -6,17 +6,22 @@ export default function ProjectList({
   projectType,
   animationOrder,
   generateDelayStyle,
+  icon,
 }: {
   projectType: ProjectType
   animationOrder: AnimationOrder
   generateDelayStyle: (order: AnimationOrder) => React.CSSProperties
+  icon: JSX.Element
 }) {
   return (
     <div
       style={generateDelayStyle(animationOrder)}
-      className="flex flex-col gap-6 flex-1 animated-block"
+      className="flex flex-col gap-4 flex-1 animated-block"
     >
-      <h2 className="text-md text-dark">{projectType}</h2>
+      <div className="flex items-center gap-1 text-dark">
+        {icon}
+        <h2 className="text-md">{projectType}</h2>
+      </div>
       {projects
         .filter((project: Project) => project.type === projectType)
         .map((project) => {

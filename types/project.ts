@@ -6,8 +6,8 @@ export interface Resource {
 }
 
 export enum ProjectType {
-  BUILDING = "Building",
-  PROJECTS = "Projects",
+  BUILDING = "Personnal builds",
+  PROJECTS = "Production projects",
   AWARDS = "Awards",
 }
 

@@ -3,6 +3,8 @@ import { NavDock } from "@/components/nav-dock"
 import ProjectList from "@/components/project-list"
 import { cn } from "@/lib/utils"
 import { AnimationOrder, ProjectType } from "@/types/project"
+import { FaHammer } from "react-icons/fa"
+import { IoIosRocket, IoIosBuild, IoIosTrophy } from "react-icons/io"
 
 export default function Home() {
   const ANIMATION_DELAY_INCREMENT = 0.1
@@ -59,9 +61,12 @@ function Head({
     >
       <div className="relative">
         <h1 className="text-[3rem] mb-2">Maxime Eliazord</h1>
-        <span className="absolute top-[55px] w-full text-center font-light left-1/2 transform -translate-x-1/2 md:text-start">
-          Typescript / Solidity builder
-        </span>
+        <div className="absolute w-full top-[55px] left-1/2 transform -translate-x-1/2 flex items-center gap-2">
+          <span className="text-center font-light md:text-start">
+            TypeScript / Solidity builder
+          </span>
+          <FaHammer />
+        </div>
       </div>
       <NavDock />
     </div>
@@ -103,7 +108,7 @@ function BottomContent({
 }) {
   return (
     <div
-      className="flex flex-col gap-8 animated-block"
+      className="flex flex-col gap-6 animated-block"
       style={generateDelayStyle(animationOrder)}
     >
       <h2>Why the web?</h2>
@@ -137,19 +142,22 @@ function ProjectSection({
   return (
     <div className="flex flex-col md:flex-row justify-between gap-10 mb-4">
       <ProjectList
-        projectType={ProjectType.BUILDING}
-        animationOrder={AnimationOrder.FOURTH}
-        generateDelayStyle={generateDelayStyle}
-      />
-      <ProjectList
         projectType={ProjectType.PROJECTS}
         animationOrder={AnimationOrder.FIFTH}
         generateDelayStyle={generateDelayStyle}
+        icon={<IoIosRocket />}
+      />
+      <ProjectList
+        projectType={ProjectType.BUILDING}
+        animationOrder={AnimationOrder.FOURTH}
+        generateDelayStyle={generateDelayStyle}
+        icon={<IoIosBuild />}
       />
       <ProjectList
         projectType={ProjectType.AWARDS}
         animationOrder={AnimationOrder.SIXTH}
         generateDelayStyle={generateDelayStyle}
+        icon={<IoIosTrophy />}
       />
     </div>
   )
